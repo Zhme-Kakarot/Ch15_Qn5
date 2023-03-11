@@ -3,30 +3,28 @@
 
 #include "Filter.h"
 
+using namespace std;
+
 int main() {
 
-	std::ifstream inFile;
-	std::ofstream outFile;
+	ifstream inFile;
+	ofstream outFile;
 
-	Encryption e(42);
+	Encryption e(2);
 	Uppercase u;
 	Copy c;
-
-	std::cout << "Looks okay so far..." << std::endl;
 
 	inFile.open("input.txt");
 	outFile.open("encryption.txt");
 	e.doFilter(inFile, outFile);
 
+	inFile.open("input.txt");
 	outFile.open("uppercase.txt");
 	u.doFilter(inFile, outFile);
 
+	inFile.open("input.txt");
 	outFile.open("copy.txt");
 	c.doFilter(inFile, outFile);
 
-	inFile.close();
-	outFile.close();
-
-	std::cout << "This should be it..." << std::endl;
 	return 0;
 }

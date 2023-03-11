@@ -28,5 +28,14 @@
     <Text Include="input.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="encryption.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="copy.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="uppercase.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

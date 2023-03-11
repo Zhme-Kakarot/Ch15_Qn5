@@ -10,14 +10,15 @@ public:
 	virtual char transform(char ch) = 0;
 
 	void doFilter(ifstream& in, ofstream& out) {
-		char c = in.get();
+		char c;
 
-		while(c != '\0') {
+		while((c = in.get()) != EOF) {
 
 			c = transform(c);
 			out << c;
-			c = in.get();
 		}
+		in.close();
+		out.close();
 	}
 };
 
@@ -28,7 +29,7 @@ class Encryption: public Filter {
 public:
 
 	Encryption(int k) {
-		key = k;
+		this->key = k;
 	}
 	virtual char transform(char ch) override {
 
@@ -45,10 +46,8 @@ public:
 
 	}
 	virtual char transform(char ch) override {
-		if(ch == '\s' || ch == '\t' || ch == '.' || ch == '\n' || ch == '\'' || ch == '\"') 
-			return ch;
-		else
-			return ch - 32;
+		
+		return toupper(ch);
 	}
 
 };

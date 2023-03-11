@@ -133,7 +133,10 @@
     <ClInclude Include="Filter.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="copy.txt" />
+    <Text Include="encryption.txt" />
     <Text Include="input.txt" />
+    <Text Include="uppercase.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
